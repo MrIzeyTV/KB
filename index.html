@@ -131,5 +131,16 @@
       document.body.appendChild(script);
 
     </script>
+    <button onclick="runTelegramAd()">Показать рекламу</button>
+
+<script>
+    function runTelegramAd() {
+        if (window.TelegramAdsController) {
+            window.TelegramAdsController.triggerNativeNotification()
+                .then(() => console.log("Реклама запущена!"))
+                .catch(() => console.log("Ошибка рекламы"));
+        }
+    }
+</script>
   </body>
 </html>
